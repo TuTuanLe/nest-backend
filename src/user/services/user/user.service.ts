@@ -13,7 +13,9 @@ export class UserService {
     private userRepository: Repository<User>,
   ) {}
 
-  public findUsers() {}
+  public findUsers() {
+    return this.userRepository.find();
+  }
 
   public getDefaultUserDTO(user: CreateUserDto): CreateUserDto {
     const EMPTY_STRING = '';
@@ -54,5 +56,13 @@ export class UserService {
     );
 
     return result;
+  }
+
+  public async updateUserDTO(id: number, userDTO: CreateUserDto) {
+    return this.userRepository.update({ id }, { ...userDTO });
+  }
+
+  public async deleteUSer(id: number) {
+    return this.userRepository.delete({ id });
   }
 }
