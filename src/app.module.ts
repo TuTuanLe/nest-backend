@@ -9,6 +9,8 @@ import { User } from './user/user.entity';
 import { UserModule } from './user/user.module';
 import { UserController } from './user/controller/user/user.controller';
 import { UserService } from './user/services/user/user.service';
+import { BusinessNewsModule } from './business-news/business-news.module';
+import { BusinessNewsController } from './controller/business-news/business-news/business-news.controller';
 
 @Module({
   imports: [
@@ -28,13 +30,14 @@ import { UserService } from './user/services/user/user.service';
       synchronize: true,
     }),
     UserModule,
+    BusinessNewsModule,
     // ConfigModule.forRoot({
     //   isGlobal: true,
     //   load: [databaseConfig],
     //   envFilePath: '.env',
     // }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, BusinessNewsController],
   providers: [AppService],
 })
 export class AppModule {}
