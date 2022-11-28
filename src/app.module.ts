@@ -7,10 +7,10 @@ import { TYPEORM_CONFIG } from './config/constant';
 import databaseConfig from './config/database.config';
 import { User } from './user/user.entity';
 import { UserModule } from './user/user.module';
-import { UserController } from './user/controller/user/user.controller';
-import { UserService } from './user/services/user/user.service';
+
 import { BusinessNewsModule } from './business-news/business-news.module';
-import { BusinessNewsController } from './controller/business-news/business-news/business-news.controller';
+import { BusinessNewsController } from './business-news/business-news.controller';
+import { AuthController } from './auth/auth.controller';
 
 @Module({
   imports: [
@@ -37,7 +37,7 @@ import { BusinessNewsController } from './controller/business-news/business-news
     //   envFilePath: '.env',
     // }),
   ],
-  controllers: [AppController, BusinessNewsController],
+  controllers: [AppController, AuthController, BusinessNewsController],
   providers: [AppService],
 })
 export class AppModule {}

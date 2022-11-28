@@ -1,12 +1,7 @@
-import { PasswordTransformer } from 'src/common/transformers/password.transformer';
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
+import { PasswordTransformer } from '../common/transformers/password.transformer';
 
-@Entity({ name: 'users' })
+@Entity('user')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
